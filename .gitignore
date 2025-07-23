@@ -1,0 +1,8 @@
+__pycache__/
+lgb
+*.old
+*.in
+*.tmp
+*.zip
+delete_menu.py
+
