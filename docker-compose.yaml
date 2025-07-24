@@ -1,0 +1,10 @@
+#DOCKER-COMPOSE.YAML
+
+version: '3.8'
+
+services:
+  myapp:	# название контейнера
+    build: .
+    volumes:
+      - ./src:/app   # src —  папка c приложением на хосте (нужно чтобы существовала)
+    command: python main.py
