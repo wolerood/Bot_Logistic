@@ -133,7 +133,17 @@ async def reply_menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE)
 async def sub_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
-    if "_" not in query.data:
+    data = query.data
+
+    # Обрабатываем кнопку "Назад"
+    if data == "back_main":
+        await query.edit_message_text(
+            "Выберите действие:",
+            reply_markup=get_reply_main_menu()
+        )
+        return
+
+    if "_" not in data:
         return
     action, category = query.data.split("_")
     user_id = query.from_user.id
