@@ -3,9 +3,9 @@
 version: '3.8'
 
 services:
-  restart: always
-  myapp: # название контейнера
+  myapp:
     build: .
+    restart: always
     volumes:
-      - ./src:/app   # src —  папка c приложением на хосте (нужно чтобы существовала)
+      - ./src:/app  # src — папка с приложением на хосте (нужно чтобы существовала)
     command: python main.py
