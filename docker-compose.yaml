@@ -3,6 +3,7 @@
 version: '3.8'
 
 services:
+  restart: always
   myapp: # название контейнера
     build: .
     volumes:
